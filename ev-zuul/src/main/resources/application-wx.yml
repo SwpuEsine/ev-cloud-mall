@@ -1,0 +1,25 @@
+#jwt 设置
+jwt:
+  tokenHead: Bearer
+  header: Authorization
+  expiration: 2592000
+
+auth:
+  annoymosUrls:
+      - /swagger-resources
+      - /v2/api-docs
+      - /v2/api-docs-ext
+      - /doc.html
+      - /webjars/**
+      - /doc.html
+      - /wx/home/**
+      - /wx/catalog/**
+      - /wx/goods/**
+      - /wx/search/*
+      - /wx/auth/login_by_weixin
+      - /wx/order/pay-notify
+      - /wx/recycle/detail
+      - /wx/topic/**
+      - /druid/**
+      - /wx/storage/upload
+      - /wx/coupon/list

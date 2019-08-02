@@ -1,0 +1,23 @@
+##引导上下文
+#spring:
+#  application:
+#    name: evweb
+#  cloud:
+#    config:
+#      profile: dev
+#      uri: http://localhost:8888/
+#      username: root
+#      password: root
+#
+##下面的会跟上面的重复  spring.application.name 优先
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8099/eureka/
+##启动断路器
+#feign:
+#  hystrix:
+#    enabled: true
+##server:
+##  port: 8080
+#

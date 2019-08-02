@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ev.cloud</groupId>
+		<artifactId>easyvue-cloud</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+
+	<packaging>pom</packaging>
+	<modules>
+		<module>provider-umc-api</module>
+	</modules>
+
+	<groupId>com.ev.cloud</groupId>
+	<artifactId>ev-provider-api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ev-provider-api</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+
+
+	<dependencies>
+	<!--	<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>-->
+
+		<dependency>
+			<groupId>com.ev.cloud</groupId>
+			<artifactId>ev-common-base</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+	<!--	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		&lt;!&ndash;分布式配置使用refresh手动刷新配置&ndash;&gt;
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		</dependency>-->
+		<!--分布式配置客户端-->
+		<!--<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>-->
+		<dependency>
+			<groupId>com.ev.cloud</groupId>
+			<artifactId>ev-db</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

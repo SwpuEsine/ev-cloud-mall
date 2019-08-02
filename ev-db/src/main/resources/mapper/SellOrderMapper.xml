@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ev.cloud.db.mapper.SellOrderMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.ev.cloud.db.dto.SellOrder">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="recycle_book_id" property="recycleBookId"/>
+        <result column="number" property="number"/>
+        <result column="phone" property="phone"/>
+        <result column="region" property="region"/>
+        <result column="address_detail" property="addressDetail"/>
+        <result column="status" property="status"/>
+        <result column="appoint_time" property="appointTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="reserve_price" property="reservePrice"/>
+        <result column="actual_price" property="actualPrice"/>
+        <result column="user_name" property="userName"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `user_id`,
+        `recycle_book_id`,
+        `number`,
+        `phone`,
+        `region`,
+        `address_detail`,
+        `status`,
+        `appoint_time`,
+        `create_time`,
+        `reserve_price`,
+        `actual_price`,
+        `user_name`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO sell_order (
+            `id`,
+            `user_id`,
+            `recycle_book_id`,
+            `number`,
+            `phone`,
+            `region`,
+            `address_detail`,
+            `status`,
+            `appoint_time`,
+            `create_time`,
+            `reserve_price`,
+            `actual_price`,
+            `user_name`
+        ) VALUES (
+            #{pojo.id},
+            #{pojo.userId},
+            #{pojo.recycleBookId},
+            #{pojo.number},
+            #{pojo.phone},
+            #{pojo.region},
+            #{pojo.addressDetail},
+            #{pojo.status},
+            #{pojo.appointTime},
+            #{pojo.createTime},
+            #{pojo.reservePrice},
+            #{pojo.actualPrice},
+            #{pojo.userName}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO sell_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null"> `id`,</if>
+            <if test="pojo.userId!=null"> `user_id`,</if>
+            <if test="pojo.recycleBookId!=null"> `recycle_book_id`,</if>
+            <if test="pojo.number!=null"> `number`,</if>
+            <if test="pojo.phone!=null"> `phone`,</if>
+            <if test="pojo.region!=null"> `region`,</if>
+            <if test="pojo.addressDetail!=null"> `address_detail`,</if>
+            <if test="pojo.status!=null"> `status`,</if>
+            <if test="pojo.appointTime!=null"> `appoint_time`,</if>
+            <if test="pojo.createTime!=null"> `create_time`,</if>
+            <if test="pojo.reservePrice!=null"> `reserve_price`,</if>
+            <if test="pojo.actualPrice!=null"> `actual_price`,</if>
+            <if test="pojo.userName!=null"> `user_name`</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null"> #{pojo.id},</if>
+            <if test="pojo.userId!=null"> #{pojo.userId},</if>
+            <if test="pojo.recycleBookId!=null"> #{pojo.recycleBookId},</if>
+            <if test="pojo.number!=null"> #{pojo.number},</if>
+            <if test="pojo.phone!=null"> #{pojo.phone},</if>
+            <if test="pojo.region!=null"> #{pojo.region},</if>
+            <if test="pojo.addressDetail!=null"> #{pojo.addressDetail},</if>
+            <if test="pojo.status!=null"> #{pojo.status},</if>
+            <if test="pojo.appointTime!=null"> #{pojo.appointTime},</if>
+            <if test="pojo.createTime!=null"> #{pojo.createTime},</if>
+            <if test="pojo.reservePrice!=null"> #{pojo.reservePrice},</if>
+            <if test="pojo.actualPrice!=null"> #{pojo.actualPrice},</if>
+            <if test="pojo.userName!=null"> #{pojo.userName}</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO sell_order(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.userId},
+            #{pojo.recycleBookId},
+            #{pojo.number},
+            #{pojo.phone},
+            #{pojo.region},
+            #{pojo.addressDetail},
+            #{pojo.status},
+            #{pojo.appointTime},
+            #{pojo.createTime},
+            #{pojo.reservePrice},
+            #{pojo.actualPrice},
+            #{pojo.userName}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+
+        UPDATE sell_order
+        <set>
+            <if test="pojo.id != null"> `id` = #{pojo.id},</if>
+            <if test="pojo.userId != null"> `user_id` = #{pojo.userId},</if>
+            <if test="pojo.recycleBookId != null"> `recycle_book_id` = #{pojo.recycleBookId},</if>
+            <if test="pojo.number != null"> `number` = #{pojo.number},</if>
+            <if test="pojo.phone != null"> `phone` = #{pojo.phone},</if>
+            <if test="pojo.region != null"> `region` = #{pojo.region},</if>
+            <if test="pojo.addressDetail != null"> `address_detail` = #{pojo.addressDetail},</if>
+            <if test="pojo.status != null"> `status` = #{pojo.status},</if>
+            <if test="pojo.appointTime != null"> `appoint_time` = #{pojo.appointTime},</if>
+            <if test="pojo.createTime != null"> `create_time` = #{pojo.createTime},</if>
+            <if test="pojo.reservePrice != null"> `reserve_price` = #{pojo.reservePrice},</if>
+            <if test="pojo.actualPrice != null"> `actual_price` = #{pojo.actualPrice},</if>
+            <if test="pojo.userName != null"> `user_name` = #{pojo.userName}</if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+</mapper>
+

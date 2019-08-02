@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: dev,core
+  messages:
+    encoding: UTF-8
+  application:
+    name: provider-umc
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+  instance:
+    prefer-ip-address: true # 当其它服务获取地址时提供ip而不是hostname
+
+
+
+logging:
+  level:
+    root:  DEBUG
+    org.springframework:  ERROR
+    org.mybatis:  DEBUG
+    com.ev.cloud.db:  DEBUG

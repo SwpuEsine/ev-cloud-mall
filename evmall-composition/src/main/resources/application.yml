@@ -1,0 +1,19 @@
+server:
+  port: 8083
+spring:
+  #多个接口 同一个文件名会报错
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: evmall-web
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+Hystrix具备了服务降级、服务熔断、线程隔离、请求缓存、请求合并以及服务监控等强大功能。
+https://blog.lqdev.cn/2018/09/04/SpringCloud/chapter-one/
+
+
+
+spring cloud Eureka
+
+        主要内容是对Netflix公司一系列开源产品的封装,  为spring boot 应用提供了自配置的Netflix oss整合
+
+
+        服务发现  Eureka   断路器 Hystrix  然后路由Zuul  客户端负载均衡  ribbon
+
+
+
+
+        服务注册中心  @EnableEurekaServer   启动一个注册中心给其他会话
+                    然后关闭默认的客户端
+
+                    Consul 是一个客户端程序 下载后命令行启动
+
+                    然后不需要EurekaServer  disCoverClient 很好的屏蔽了细节 做了一层抽象
+
+                    @EnableDiscoveryClient 可以将当前应用加入到服务治理体系中  也就是注册到配置中心
+
+
+                    loadBalancerClient  和RESTTEMPLATE 一起使用
+
+
+
+                    @EnableFeignClients  EnableDiscoveryClient
+
+                    @FeignClient("eureka-client")
+
+
+
+
+                     Feign的hystrix 默认是关闭的  可以设置成打开状态
+
+
+                     EnableCircuitBreaker  实现了服务熔断 降级
+
+
+
+
+
+                    @EnableConfigServer 开启配置服务端功能
+
+
+
+                    分布式配置  EnableConfigServer  @EnableDiscoverClient
+                    用来将config-server注册到上面配置的服务注册中心上去
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    //@Value  ConfigurationPropertie  Envirement
+
+
+                    如何实现高可用  高可用就是集群嘛
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    spring cloud动态刷新配置信息
+
+
+                    1 引入actuator 动态监控
+                    2 在需要刷新的bean 上面@refreshScope
+                    3 /refresh 手动刷新
+                    4 Spring cloud bus 真正的动态刷新
+
+
+
+
+
+
+                    Feign 和Ribbon 负载均衡算法  有那几种  轮训算法
+
+
+                    LoadBalanceClient在初始化的时候  会通过向Eureka注册中心 获取服务列表
+
+                    每过10秒 就会PING一次
+
+
+
+
+
+                    Filter与拦截器的区别
+
+                    Filter是依赖于servlet容器   拦截器是spring框架的一套东西
+
+                    执行的时候 先走的filter 后面走的拦截器
+
+                    然后 两者在方法中拿到的参数也是不一样的
+
+                    18589092423 回来打电话聊
+

@@ -1,0 +1,29 @@
+server:
+  port: 7979
+spring:
+  application:
+    name: ev-zuul
+  profiles:
+    active: wx
+  redis:
+        host: 127.0.0.1
+        port: 6379
+        password:
+        jedis:
+          pool:
+            min-idle: 8
+            max-idle: 500
+            max-active: 2000
+            max-wait: 10000
+        timeout: 5000 #5000毫秒
+        database: 0  #默认0
+
+
+# wx 用户服务  商品服务   还有订单服务   搜索服务
+zuul:
+  routes:
+    api-a:
+      path: /wx/user/**
+      serviceId: ev-client
+
+

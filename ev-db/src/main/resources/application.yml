@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: pro
+  messages:
+    encoding: UTF-8
+
+#logging:
+#  level:
+#    root:  ERROR
+#    org.springframework:  ERROR
+#    org.mybatis:  DEBUG
+#    com.ev.cloud.db:  DEBUG

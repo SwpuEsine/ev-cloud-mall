@@ -1,0 +1,33 @@
+#暂时不使用spring cloud -config
+spring:
+  application:
+    name: ev-eureka-server
+
+#spring:
+#  profiles:
+#    active: dev
+#  application:
+#    name: ev-eureka-server
+#  security:
+#    user:
+#      name: root
+#      password: root
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+
+
+
+
+#访问地址localhost 1001 不作为客户端
+server:
+  port: 8761
+
+
+
+

@@ -1,0 +1,27 @@
+## 多网环境下的IP选择  选择服务暴露的网段信息
+#
+#spring:
+#  cloud:
+#    inetutils:
+#      ignoredInterfaces:
+#        - docker0 #忽略docker0网卡
+#        - veth.*  #忽略所有veth开头的网卡
+#        - VM.*
+#      preferredNetworks:  # 使用 spring.cloud.inetutils.preferredNetworks 属性指定使用的网络地址
+#        - 192.168
+#
+#
+## 已停止的微服务节点注销慢或不注销
+#eureka:
+#  server:
+#    enable-self-preservation: false #关闭自我保护   #清理间隔，单位毫秒
+#    eviction-interval-timer-in-ms: 60000  #清理间隔，单位毫秒
+#  instance:
+#    hostname: localhost
+#  client:
+#    #下面两句禁用客户端注册行为
+#    registerWithEureka: false #是否向服务端注册自己，它本身就是Eureka Server，所以为false
+#    fetchRegistry: false   #表示是否从Eureka Server获取信息，因为这是一个单节点，不需要同步其它Eureka Server的数据，所以为 false
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+#      #设置 Eureka Client 与 Eureka Server 同步的地址，注册、查询服务都要使用该地址，多个地址可用逗号分隔
